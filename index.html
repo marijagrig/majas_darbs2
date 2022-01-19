@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="shortcut icon" href="#">
+    <script src="static/spele.js"></script>
+</head>
+<body>
+    <ul class="topnav" id="navbar">
+      <li><a id="aspele" href="#spele" onclick="atvert('spele')">Burtu spēle</a></li>
+      <li><a id="anoteikumi" class="active" href="#noteikumi" onclick="atvert('noteikumi')">Noteikumi</a></li>
+      <li><a id="arezultati" href="#rezultati" onclick="atvert('rezultati')">Rezultāti</a></li>
+      <li class="right"><a id="apar" href="#par" onclick="atvert('par')">Kontakti</a></li>
+    </ul>
+
+    <div class="content" id="noteikumi" style="display:block" >
+      <h2>Noteikumi</h2>
+      <p>Spēles sākumā jāizvēlas burtu skaits vārdā.</p>
+      <p>Par garāku vārdu salikšanu var iegūt vairāk punktu.</p>
+      <p>Jo vairāk vārdu izdosies salikt 30 sekunžu laikā, jo vairāk punktus iegūsiet!</p>
+      <p>Lai saliktu vārdu, burtu kartītes ar peli jāpārvieto un jāsaliek rindā pareizā secībā.</p>
+    </div>
+    <div class="content" id="spele" style="display:none" >
+        <form >
+         <input type="number" min="5" max="10" name="cik" value="5">
+         <input type="button" value="Sākt spēli" onclick="sakums(cik.value);" >
+         <label style="margin:20px;" id="laiks">laiks = 60 s</label>
+         <label style="margin:20px;" id="punkti"></label>
+        </form>
+    </div>
+      <div class="content" id="rezultati" style="display:none" >
+      <h2>Rezultāti</h2>
+      <div id="tabula"></div>
+    </div>
+    <div class="content" id="par" style="display:none" >
+      <h2>Par spēli</h2>
+      <p>Spēles vietne ir izveidota kā piemērs STARTIT projekta organizēto skolotāju mācību laikā.</p>
+      <p>Kods nav ideāls un daudz ko varēja darīt citādi.</p>
+    </div>
+</body>
+</html>
