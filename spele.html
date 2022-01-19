@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmiņas spēle</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>
+                <a href="index.html"> Atmiņas spēle</a>
+                
+            </h1>
+            <ul>
+                <li>Spēle</li>
+                <li><a href="pspele.html">Pielāgota Spēle</a></li>
+                <li><a href="tops.html">Tops</a></li>
+                <li><a href="parautoru.html">Par autoru</a></li>
+            </ul>
+        </div><!--beidzas header-->
+    
+    <div class="content">
+        <h3 class="virsraksts">Sveiks</h3>
+
+        <div class="game">
+            <div class="block" id="L0" onclick="veiktGajienu('L0')">
+                <div> 😎</div>
+            </div>
+            <div class="block" id="L1" onclick="veiktGajienu('L1')">
+                <div> 😂</div>
+            </div>
+            <div class="block" id="L2" onclick="veiktGajienu('L2')">
+                <div> 🥰</div>
+            </div>
+            <div class="block" id="L3" onclick="veiktGajienu('L3')">
+                <div> 😎</div>
+            </div>
+            <div class="block" id="L4" onclick="veiktGajienu('L4')">
+                <div> 🥰</div>
+            </div>
+            <div class="block" id="L5" onclick="veiktGajienu('L5')">
+                <div> 😂</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    let laukumuSaturs = ['😎','😂','🥰','😎','😂','🥰']
+    let atvertieLaukumi = []
+    let pedejieDivi = []
+function veiktGajienu(laukums)
+{
+    let atvertsJaunsLaukums = false;
+    if(atvertieLaukumi.indexOf(laukums) == -1){
+        atvertsJaunsLaukums = true
+    }else{
+        atvertsJaunsLaukums = false
+    }
+
+
+    if(atvertsJaunsLaukums)
+    {
+        document.querySelector('#'+laukums+' div').style.display="block"
+        document.querySelector('#'+laukums+' div').style.opacity=1
+        pedejieDivi.push(laukums)
+    }
+    if(pedejieDivi.length == 2){
+        let atverts1 = pedejieDivi[0].replace('L','')
+        let atverts2 = pedejieDivi[1].replace('L','')
+
+        atverts1 = parseInt(atverts1, 10)
+        atverts2 = parseInt(atverts2, 10)
+
+    if (laukumuSaturs[atverts1] == laukumuSaturs[atverts2])
+    {
+        console.log('atverti vienadi')
+        atvertieLaukumi.push(pedejieDivi[0], pedejieDivi[1])
+    }
+    else
+    {
+        console.log('nav atverti vienadi')
+        document.querySelector('#'+pedejieDivi[0]+' div').style.opacity=0.1
+        document.querySelector('#'+pedejieDivi[1]+' div').style.opacity=0.1
+    }
+
+    pedejieDivi = []
+}
+
+if( laukumuSaturs.length == atvertieLaukumi.length )
+{
+    alert('Apsveicam')
+}
+}
+</script>
+</body>
+</html>

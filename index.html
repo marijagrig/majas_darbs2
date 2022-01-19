@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmiņas spēle</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>
+                    Atmiņas spēle
+                
+            </h1>
+            <ul>
+                <li><a href="spele.html">Spēle</a></li>
+                <li><a href="pspele.html">Pielāgota Spēle</a></li>
+                <li><a href="tops.html">Tops</a></li>
+                <li><a href="parautoru.html">Par autoru</a></li>
+            </ul>
+        </div>
+    
+    <div class="content">
+        <h3 id="virsraksts">Noteikumi teksts</h3>
+        Vārds: <input id="vards"/>
+        <br/>
+        Vecums: <input id = "vecums"/>
+        <br/>
+        Reģions:
+        <select id="regions">
+            <option value="Vidzeme">Vidzeme</option>
+            <option value="Latgale">Latgale</option>
+            <option value="Kurzeme">Kurzeme</option>
+            </select>
+
+            <button onclick="saktSpeli()">Sākt</button>
+    </div>
+</div> <!--beidzas wrapper-->
+<script>
+    function saktSpeli()
+    {
+        let vards = document.querySelector('#vards').value
+        let vecums = document.querySelector('#vecums').value
+        let regions = document.querySelector('#regions').value
+        console.log(vards)
+        
+        if(vards == ''){
+        alert('Ievadi vārdu!')
+    }else{
+        window.location='spele.html#'+vards+','+vecums+','+regions //Pariet uz spēli
+    }
+    }
+    
+    
+    //beidzas saktSpeli
+    /*
+    let vards
+    const valsts = "Latvija"
+    vards = "Laura"
+    let vards2 = `Peteris ir labais!!!`
+    let klase = ['Jānis', 'Laura', 'Jana']
+    klase[3] = 'Uģis'
+    let skolens = {
+        vards: 'Jānis', 
+        vecums: 16,
+        'patīk datori':'jā'
+    }
+    skolens ['vards']
+    let json = [
+        {
+            vards:'Jānis',
+            vecums:16
+        },
+        {
+            vards:'Jana',
+            vecums:17
+        },
+    ]
+    console.log('beigas ir')
+    document.querySelector('.virsraksts').innerHTML = 'Vards: '+vards
+    */
+    </script>
+</body>
+</html>
