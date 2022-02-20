@@ -1,5 +1,5 @@
-var vards = "ASJCRVIPAT";
-var pVards = "JAVASCRIPT";
+var vards = "TIBHGU";
+var pVards = "GITHUB";
 var rezultatsIndex = 0;
 var startsLaiks;
 var izmantotiBurti = [];
@@ -9,7 +9,7 @@ function startSpele() {
     startsLaiks = Date.now();
     rezultatsIndex = 0;
     document.getElementById("rezultats").textContent = "";
-    for (var i=0; i<10; i++) {
+    for (var i=0; i<6; i++) {
         document.getElementById("b"+i).classList.remove("izmantotsBurts");
         document.getElementById("b"+i).textContent = vards[i];
         document.getElementById("rb"+i).textContent = "";
@@ -17,7 +17,7 @@ function startSpele() {
 
 }
 
-function Burts(element) {
+function izveleBurta(element) {
 
     if (!element.classList.contains("izmantotsBurts")) {        
         var elementTeksts = element.textContent;
@@ -25,7 +25,7 @@ function Burts(element) {
         izmantotiBurti[rezultatsIndex++] = element.getAttribute("id");
         element.classList.add("izmantotsBurts");
 
-        if (rezultatsIndex == 10) {
+        if (rezultatsIndex == 6) {
             beigaSpele();
         }
     }
@@ -43,7 +43,7 @@ function notirit(rbIndex){
 function beigaSpele() {
 
     var iegVards = "";
-    for (var i=0; i<10; i++) {
+    for (var i=0; i<6; i++) {
         iegVards += document.getElementById("rb"+i).textContent;
     }
 

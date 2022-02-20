@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmiņas spēle</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h2>
+                <a href="index.html"> Burtu spēle </a>
+            </h2>  
+                      
+        </div> 
+
+        <div class="content">
+            Vārds: <input id="vards" />
+            <br><br>
+            Vecums: <input id="vecums" />
+            <br><br>
+            Reģions: 
+            <select id="regions">
+                <option value="Kurzeme">Kurzeme</option>
+                <option value="Vidzeme">Vidzeme</option>
+                <option value="Latgale">Latgale</option>
+                <option value="Zemgale">Zemgale</option>
+            </select>
+
+            <button onclick="saktSpeli()"><b>Spēlet</button></b></button>
+        </div>
+
+    </div> 
+
+<script>
+
+    function saktSpeli() {
+        let vards = document.querySelector('#vards').value
+        let vecums = document.querySelector('#vecums').value
+        let regions = document.querySelector('#regions').value
+        
+        console.log(vards+" "+vecums+" "+regions)
+
+        if (vards == '' && vards == ' ') {
+            alert('Ievadi vārdu')
+        } else {
+            window.location = 'index.html#' + vards+','+vecums+','+regions
+        } 
+
+    } 
+ </script>
+</body>
+</html>
